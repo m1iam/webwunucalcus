@@ -1,29 +1,82 @@
-# Create T3 App
+# Математичний Калькулятор WEB WUNU
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Опис Проекту
+Веб-додаток для розв'язання математичних задач, розроблений з використанням Next.js та TypeScript. Проект містить набір інструментів для виконання різних математичних операцій та обчислень.
 
-## What's next? How do I make an app with this?
+## Технічний Стек
+- **Frontend Framework**: Next.js 14
+- **Мова Програмування**: TypeScript
+- **Стилізація**: Tailwind CSS
+- **Архітектура**: App Router (Next.js)
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Функціональність
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+### 1. Калькулятор Виразів
+- Обчислення виразу: (a*sin x² + tan a)/√e
+- Підтримка введення параметрів a та x
+- Автоматичне оновлення результату
+- Точність обчислень до 4 знаків після коми
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+### 2. Добуток Цифр
+- Знаходження добутку цифр натурального числа
+- Валідація введених даних
+- Обробка великих чисел
 
-## Learn More
+### 3. Операції з Масивами
+- Пошук мінімального елемента в одновимірному масиві
+- Пошук максимального елемента та його індексів у двовимірному масиві (5x5)
+- Підтримка введення даних через кому та крапку з комою
+- Візуалізація результатів
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+### 4. Підрахунок Додатних Елементів
+- Аналіз двох масивів A(8) та B(8)
+- Підрахунок загальної кількості додатних елементів
+- Зручний інтерфейс для введення масивів
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### 5. Модифікація Рядків
+- Видалення середньої літери для рядків непарної довжини
+- Видалення двох середніх літер для рядків парної довжини
+- Обробка пустих рядків та спеціальних символів
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Структура Проекту
+src/
+├── app/
+│ ├── page.tsx # Головна сторінка
+│ └── tasks/ # Компоненти задач
+│ ├── expression-calculator/
+│ ├── digit-product/
+│ ├── array-operations/
+│ ├── array-positives/
+│ └── string-modifier/
+└── utils/
+└── calculations.ts
 
-## How do I deploy this?
+## Встановлення та Запуск
+1. Клонування репозиторію:
+```bash
+git clone https://github.com/m1iam/webwunucalcus.git
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+2. Встановлення залежностей:
+```bash
+npm install
+```
+
+3. Запуск проекту в режимі розробки:
+```bash
+npm run dev
+```
+
+4. Відкрийте [http://localhost:3000](http://localhost:3000) у браузері
+
+## Технічні Особливості
+- Використання React Hooks для управління станом
+- Типізація всіх компонентів та функцій
+- Адаптивний дизайн для різних розмірів екрану
+- Оптимізована обробка помилок та валідація введення
+- Модульна архітектура для легкого розширення функціоналу
+
+## Розробник
+- Розробник: Мостова Соломія
+- Університет: West Ukrainian National University
+- Рік: 2025
