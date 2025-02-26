@@ -20,8 +20,9 @@ export default function ArrayOperations() {
         row.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n))
       )
       setMatrix(rows)
-    } catch (e) {
-      console.error('Invalid matrix input')
+    } catch {
+      // Silently handle parsing errors
+      setMatrix([[]])
     }
   }
 

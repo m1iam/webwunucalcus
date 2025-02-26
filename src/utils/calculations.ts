@@ -17,23 +17,37 @@ export const findMaxElementWithIndex = (matrix: number[][]): {
   row: number;
   col: number;
 } => {
-  if (!matrix || !matrix[0]) {
+  // First check if matrix exists and has rows
+  if (!matrix.length) {
     throw new Error('Matrix must not be empty');
   }
 
-  let max = matrix[0][0];
+  // Then check if first row exists and has elements
+  const firstRow = matrix[0];
+  if (!firstRow?.length) {
+    throw new Error('Matrix rows must not be empty');
+  }
+
+  // Initialize max with the first element
+  let max = firstRow[0]!;
   let row = 0;
   let col = 0;
 
-  matrix.forEach((rowArr, i) => {
-    rowArr.forEach((value, j) => {
-      if (value > max) {
-        max = value;
+  for (let i = 0; i < matrix.length; i++) {
+    const currentRow = matrix[i];
+    if (!currentRow?.length) {
+      throw new Error(`Row ${i} is empty or undefined`);
+    }
+    
+    for (let j = 0; j < currentRow.length; j++) {
+      const currentValue = currentRow[j]!;
+      if (currentValue > max) {
+        max = currentValue;
         row = i;
         col = j;
       }
-    });
-  });
+    }
+  }
 
   return { value: max, row, col };
 };
